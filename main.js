@@ -56,7 +56,7 @@ function createDefaultWindow() {
     mainWindow = null;
   });
 
-  mainWindow.loadURL('http://baidu.com/');
+  mainWindow.loadURL('http://shuxuecuotiben.com/');
   // mainWindow.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}`);
   return mainWindow;
 }
