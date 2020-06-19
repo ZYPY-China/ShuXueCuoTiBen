@@ -1,7 +1,7 @@
 // This is free and unencumbered software released into the public domain.
 // See LICENSE for details
 
-const {app, BrowserWindow, protocol, ipcMain} = require('electron');
+const {app, BrowserWindow} = require('electron');
 const log = require('electron-log');
 const {autoUpdater} = require("electron-updater");
 
@@ -49,14 +49,14 @@ function createDefaultWindow() {
   mainWindow.maximize();
 
   mainWindow.webContents.on('did-finish-load', () => {
-    mainWindow.setTitle('数学错题本');
+    mainWindow.setTitle(`数学错题本#v${app.getVersion()}`);
   });
 
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
 
-  mainWindow.loadURL('http://shuxuecuotiben.com/');
+  mainWindow.loadURL('http://baidu.com/');
   // mainWindow.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}`);
   return mainWindow;
 }
@@ -86,6 +86,7 @@ autoUpdater.on('update-downloaded', (info) => {
 
 app.on('ready', function() {
   createDefaultWindow();
+  autoUpdater.checkForUpdatesAndNotify();
 });
 
 app.on('window-all-closed', () => {
@@ -100,20 +101,6 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow()
   }
-});
-
-//
-// CHOOSE one of the following options for Auto updates
-//
-
-//-------------------------------------------------------------------
-// Auto updates - Option 1 - Simplest version
-//
-// This will immediately download an update, then install when the
-// app quits.
-//-------------------------------------------------------------------
-app.on('ready', function()  {
-  autoUpdater.checkForUpdatesAndNotify();
 });
 
 //-------------------------------------------------------------------

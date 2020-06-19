@@ -3,7 +3,7 @@
   "productName": "数学错题本",
   "description": "数学错题本——智育培优",
   "author": "Kunlin",
-  "version": "0.6.1",
+  "version": "0.1.0",
   "private": true,
   "main": "main.js",
   "scripts": {
@@ -37,6 +37,11 @@
     },
     "win": {
       "icon": "assets/icon.png"
-    }
+    }, 
+    "publish": [{
+      "provider": "github",
+      "owner": "ZYPY-China",
+      "repo": "ShuXueCuoTiBen"
+    }]
   }
 }
