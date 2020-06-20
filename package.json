@@ -30,8 +30,7 @@
     "mac": {
       "category": "public.app-category.education",
       "target": [
-        "zip",
-        "dmg"
+        "zip"
       ],
       "icon": "assets/icon.png"
     },
